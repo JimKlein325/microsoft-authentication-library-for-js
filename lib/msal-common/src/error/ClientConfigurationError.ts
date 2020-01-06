@@ -23,7 +23,7 @@ export const ClientConfigurationErrorMessage = {
     },
     authorityUriInsecure: {
         code: "authority_uri_insecure",
-        desc: "Authority URIs must use https.  Please see here for valid authority configuration options: https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-js-initializing-client-applications#configuration-options"
+        desc: "Authority URIs must use https."
     },
     urlParseError: {
         code: "url_parse_error",
@@ -51,7 +51,7 @@ export const ClientConfigurationErrorMessage = {
     },
     invalidPrompt: {
         code: "invalid_prompt_value",
-        desc: "Supported prompt values are 'login', 'select_account', 'consent' and 'none'.  Please see here for valid configuration options: https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-js-initializing-client-applications#configuration-options",
+        desc: "Supported prompt values are 'login', 'select_account', 'consent' and 'none'",
     },
 };
 
@@ -152,10 +152,6 @@ export class ClientConfigurationError extends ClientAuthError {
             `${ClientConfigurationErrorMessage.clientIdSingleScopeError.desc} Given Scopes: ${inputScopes.toString()}`);
     }
 
-    /**
-     * Error thrown when prompt is not an allowed type.
-     * @param promptValue 
-     */
     static createInvalidPromptError(promptValue: any): ClientConfigurationError {
         return new ClientConfigurationError(ClientConfigurationErrorMessage.invalidPrompt.code,
             `${ClientConfigurationErrorMessage.invalidPrompt.desc} Given value: ${promptValue}`);

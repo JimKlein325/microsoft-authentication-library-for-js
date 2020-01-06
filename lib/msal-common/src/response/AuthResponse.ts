@@ -5,11 +5,12 @@
 
 /**
  * AuthResponse base type returned by MSAL library on success
- * - userRequestState: User given state
+ * - state: User given state
  * - scopes: consented scopes
  */
 export type AuthResponse = {
-    userRequestState: string;
+    scopes: Array<string>;
+    state: string;
 };
 
 /**
@@ -18,6 +19,7 @@ export type AuthResponse = {
  */
 export function buildResponseStateOnly(responseState: string) : AuthResponse {
     return {
-        userRequestState: responseState
+        scopes: null,
+        state: responseState
     };
 }

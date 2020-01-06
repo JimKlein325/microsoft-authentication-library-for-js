@@ -45,7 +45,7 @@ export class StringUtils {
      *
      * @param query
      */
-    static queryStringToObject<T>(query: string): T {
+    static queryStringToObject(query: string): any {
         let match: Array<string>; // Regex for replacing addition symbol with a space
         const pl = /\+/g;
         const search = /([^&=]+)=([^&]*)/g;
@@ -56,7 +56,7 @@ export class StringUtils {
             obj[decode(match[1])] = decode(match[2]);
             match = search.exec(query);
         }
-        return obj as T;
+        return obj;
     }
 
     /**

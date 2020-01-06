@@ -157,13 +157,6 @@ export class ScopeSet {
     }
 
     /**
-     * Returns the original scopes as an array (no extra scopes to consent)
-     */
-    getOriginalScopesAsArray(): Array<string> {
-        return Array.from(this.originalScopes);
-    } 
-
-    /**
      * Prints scopes into a space-delimited string
      */
     printScopes(): string {

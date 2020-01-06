@@ -22,7 +22,6 @@ import { AuthResponse } from "./AuthResponse";
 export type TokenResponse = AuthResponse & {
     uniqueId: string;
     tenantId: string;
-    scopes: Array<string>;
     tokenType: string;
     idToken: string;
     idTokenClaims: StringDict;
